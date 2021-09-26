@@ -27,7 +27,13 @@ username += f"_{noun}" if under == "yes" else noun
 
 if nums != "no":
 
-    digits = int(input("Enter the number of digits that you want the number at the end of your username should be of: "))
-    username += "".join(str(randint(0,10)) for _ in range(digits))
+    try:
+
+        digits = int(input("Enter the number of digits that you want the number at the end of your username should be of: "))
+        username += "".join(str(randint(0,10)) for _ in range(digits))
+
+    except ValueError:
+
+        print("Please enter a valid value.")
 
 print(username)
